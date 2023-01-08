@@ -3,7 +3,7 @@ DROP TABLE users;
 
 -- Create Table Users
 CREATE TABLE users (
-  id_user  SERIAL primary key,
+  id_users  SERIAL primary key,
   name      varchar(100) NOT NULL,
   email     varchar(100) NOT NULL UNIQUE,
   password  text NOT NULL
@@ -32,11 +32,11 @@ crypt('password', gen_salt('bf'))
 SELECT * FROM users;
 
 -- Get User
-SELECT * FROM users where id_user = 2;
+SELECT * FROM users where id_users = 2;
 SELECT * FROM users where password = crypt('password', password);
 
 -- Delete User
-DELETE FROM users where id_user = 3;
+DELETE FROM users where id_users = 3;
 
 -- Update User
 UPDATE users SET name='Muhamad Ilham Update' WHERE email='darmawanilham34@gmail.com';
